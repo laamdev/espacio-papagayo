@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const fadeUp = {
 	initial: { opacity: 0, y: 16, filter: "blur(8px)" },
@@ -30,6 +31,31 @@ export default function Home() {
 				>
 					coming soon
 				</motion.p>
+
+				<motion.div
+					initial={{ opacity: 0, scale: 0.9 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
+					className="mt-12"
+				>
+					<motion.div
+						animate={{ y: [0, -14, 0], rotate: [0, -1.5, 0] }}
+						transition={{
+							duration: 6,
+							repeat: Number.POSITIVE_INFINITY,
+							ease: "easeInOut",
+						}}
+					>
+						<Image
+							src="/images/cover.webp"
+							alt="Espacio Papagayo"
+							width={320}
+							height={320}
+							priority
+							className="w-44 rounded-2xl shadow-2xl ring-1 ring-primary-foreground/20 sm:w-56"
+						/>
+					</motion.div>
+				</motion.div>
 			</div>
 
 			<motion.footer
