@@ -1,65 +1,86 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "motion/react";
+
+const fadeUp = {
+	initial: { opacity: 0, y: 16, filter: "blur(8px)" },
+	animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+};
 
 export default function Home() {
 	return (
-		<div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-			<main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-				<Image
-					className="dark:invert"
-					src="/next.svg"
-					alt="Next.js logo"
-					width={100}
-					height={20}
-					priority
-				/>
-				<div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-					<h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-						To get started, edit the page.tsx file.
-					</h1>
-					<p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-						Looking for a starting point or more instructions? Head over to{" "}
-						<a
-							href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-							className="font-medium text-zinc-950 dark:text-zinc-50"
-						>
-							Templates
-						</a>{" "}
-						or the{" "}
-						<a
-							href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-							className="font-medium text-zinc-950 dark:text-zinc-50"
-						>
-							Learning
-						</a>{" "}
-						center.
-					</p>
-				</div>
-				<div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+		<main className="flex flex-1 flex-col bg-primary text-primary-foreground">
+			<div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+				<motion.h1
+					variants={fadeUp}
+					initial="initial"
+					animate="animate"
+					transition={{ duration: 0.9, ease: "easeOut" }}
+					className="font-serif text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl"
+				>
+					Espacio Papagayo
+				</motion.h1>
+
+				<motion.p
+					variants={fadeUp}
+					initial="initial"
+					animate="animate"
+					transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+					className="mt-6 text-sm font-bold uppercase tracking-[0.3em] text-primary-foreground/60"
+				>
+					coming soon
+				</motion.p>
+			</div>
+
+			<motion.footer
+				variants={fadeUp}
+				initial="initial"
+				animate="animate"
+				transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
+				className="grid grid-cols-1 gap-6 px-6 pb-10 text-center text-sm sm:grid-cols-3 sm:items-end sm:gap-4 sm:text-left"
+			>
+				<p className="text-primary-foreground/80">
 					<a
-						className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+						href="https://www.instagram.com/mueblesylibros/"
 						target="_blank"
 						rel="noopener noreferrer"
+						className="tw-animation hover:text-primary-foreground"
 					>
-						<Image
-							className="dark:invert"
-							src="/vercel.svg"
-							alt="Vercel logomark"
-							width={16}
-							height={16}
-						/>
-						Deploy Now
-					</a>
+						@mueblesylibros
+					</a>{" "}
+					presenta:
+					<br />
 					<a
-						className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+						href="https://www.instagram.com/espaciopapagayo/"
 						target="_blank"
 						rel="noopener noreferrer"
+						className="tw-animation hover:text-primary-foreground"
 					>
-						Documentation
+						@espaciopapagayo
 					</a>
-				</div>
-			</main>
-		</div>
+				</p>
+
+				<p className="text-primary-foreground/80 sm:text-center">
+					Un proyecto de{" "}
+					<a
+						href="https://juanserrano.studio"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="tw-animation hover:text-primary-foreground"
+					>
+						juanserrano.studio
+					</a>
+				</p>
+
+				<p className="sm:text-right">
+					<a
+						href="mailto:info@espaciopapagayo.com"
+						className="tw-animation hover:text-primary-foreground/70"
+					>
+						contacto
+					</a>
+				</p>
+			</motion.footer>
+		</main>
 	);
 }
