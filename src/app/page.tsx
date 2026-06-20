@@ -26,15 +26,9 @@ export default function Home() {
 						Papagayo
 					</h1>
 
-					<div className="space-y-3">
-						<p className="text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground/60">
-							Coming soon
-						</p>
-						<p className="max-w-sm text-base leading-relaxed text-primary-foreground/90">
-							Espacio colaborativo de diseño y producción de proyectos en
-							madera.
-						</p>
-					</div>
+					<p className="max-w-sm text-base leading-relaxed text-primary-foreground/90">
+						Espacio colaborativo de diseño y producción de proyectos en madera.
+					</p>
 				</motion.div>
 
 				<motion.div
@@ -81,16 +75,51 @@ export default function Home() {
 				initial="initial"
 				animate="animate"
 				transition={{ duration: 0.9, delay: 0.1, ease: "easeOut" }}
-				className="relative min-h-[50vh] bg-primary lg:min-h-0 lg:h-full"
+				className="group relative min-h-[50vh] overflow-hidden bg-primary lg:h-full lg:min-h-0"
 			>
+				{/* Full-color image, revealed on hover */}
 				<Image
 					src="/images/cover.webp"
 					alt="Espacio Papagayo"
 					fill
 					priority
 					sizes="(min-width: 1024px) 50vw, 100vw"
-					className="object-cover opacity-95 mix-blend-luminosity"
+					className="object-cover"
 				/>
+				{/* Blue duotone layer, fades out on hover */}
+				<div className="pointer-events-none absolute inset-0 bg-primary transition-opacity duration-700 ease-out group-hover:opacity-0">
+					<Image
+						src="/images/cover.webp"
+						alt=""
+						aria-hidden
+						fill
+						sizes="(min-width: 1024px) 50vw, 100vw"
+						className="object-cover opacity-95 mix-blend-luminosity"
+					/>
+				</div>
+
+				{/* Rotating "coming soon" badge */}
+				<div className="pointer-events-none absolute right-5 top-5 z-20 grid h-24 w-24 place-items-center rounded-full bg-background shadow-lg lg:right-8 lg:top-8 lg:h-28 lg:w-28">
+					<svg
+						viewBox="0 0 100 100"
+						className="h-full w-full animate-spin-slow"
+						aria-hidden
+					>
+						<title>Coming soon</title>
+						<defs>
+							<path
+								id="badge-curve"
+								d="M 50,50 m -36,0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
+								fill="none"
+							/>
+						</defs>
+						<text className="fill-primary text-[9.5px] font-bold uppercase [letter-spacing:0.16em]">
+							<textPath href="#badge-curve" startOffset="0">
+								Coming soon • Coming soon •
+							</textPath>
+						</text>
+					</svg>
+				</div>
 			</motion.div>
 		</main>
 	);
