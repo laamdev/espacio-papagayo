@@ -63,19 +63,9 @@ export default function Home() {
 				initial="initial"
 				animate="animate"
 				transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-				className="grid grid-cols-1 gap-6 px-6 pb-10 text-center text-sm sm:grid-cols-3 sm:items-end sm:gap-4 sm:text-left"
+				className="flex flex-col items-center gap-2 px-6 pb-10 text-center text-sm sm:flex-row sm:justify-between sm:gap-4 sm:text-left"
 			>
 				<p className="text-primary-foreground/80">
-					<a
-						href="https://www.instagram.com/mueblesylibros/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="tw-animation hover:text-primary-foreground"
-					>
-						@mueblesylibros
-					</a>{" "}
-					presenta:
-					<br />
 					<a
 						href="https://www.instagram.com/espaciopapagayo/"
 						target="_blank"
@@ -84,10 +74,7 @@ export default function Home() {
 					>
 						@espaciopapagayo
 					</a>
-				</p>
-
-				<p className="text-primary-foreground/80 sm:text-center">
-					Un proyecto de{" "}
+					, un proyecto de{" "}
 					<a
 						href="https://juanserrano.studio"
 						target="_blank"
@@ -98,7 +85,7 @@ export default function Home() {
 					</a>
 				</p>
 
-				<p className="sm:text-right">
+				<p>
 					<a
 						href="mailto:info@espaciopapagayo.com"
 						className="tw-animation hover:text-primary-foreground/70"

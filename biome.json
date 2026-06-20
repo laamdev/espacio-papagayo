@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!**/*.css", "!public"]
+		"includes": ["**", "!**/*.css", "!public", "!src/app/icon0.svg"]
 	},
 	"formatter": {
 		"enabled": true,
