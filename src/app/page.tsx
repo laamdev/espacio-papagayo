@@ -26,7 +26,7 @@ export default function Home() {
 						Papagayo
 					</h1>
 
-					<p className="max-w-sm text-base leading-relaxed text-primary-foreground/90">
+					<p className="max-w-md text-lg leading-relaxed text-primary-foreground/90">
 						Espacio colaborativo de diseño y producción de proyectos en madera.
 					</p>
 				</motion.div>
@@ -113,9 +113,17 @@ export default function Home() {
 								fill="none"
 							/>
 						</defs>
-						<text className="fill-primary text-[9.5px] font-bold uppercase [letter-spacing:0.16em]">
-							<textPath href="#badge-curve" startOffset="0">
-								Coming soon • Coming soon •
+						<text
+							className="fill-primary text-[9.5px] font-bold uppercase"
+							xmlSpace="preserve"
+						>
+							<textPath
+								href="#badge-curve"
+								startOffset="0"
+								textLength="226.19"
+								lengthAdjust="spacing"
+							>
+								{"Coming soon • Coming soon • "}
 							</textPath>
 						</text>
 					</svg>

@@ -67,7 +67,7 @@
 	--card-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
 	--popover: oklch(0.985 0.001 106.423); /* stone-50 */
 	--popover-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-	--primary: oklch(0.424 0.199 265.638); /* blue-800 #1e40af */
+	--primary: oklch(0.424 0.199 265.638); /* blue-800 */
 	--primary-foreground: oklch(0.985 0.001 106.423); /* stone-50 */
 	--secondary: oklch(0.923 0.003 48.717); /* stone-200 #e7e5e4 */
 	--secondary-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
@@ -138,6 +138,10 @@
 	}
 	html {
 		@apply font-sans;
+	}
+	::selection {
+		background-color: var(--primary-foreground);
+		color: var(--primary);
 	}
 }
 
