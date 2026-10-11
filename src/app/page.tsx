@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const fadeUp = {
 	initial: { opacity: 0, y: 16, filter: "blur(8px)" },
@@ -39,6 +40,12 @@ export default function Home() {
 					className="flex flex-col gap-8"
 				>
 					<nav className="flex flex-col gap-1 text-2xl font-bold">
+						<Link
+							href="/crowdfunding"
+							className="tw-animation w-fit hover:text-primary-foreground/60"
+						>
+							Crowdfunding
+						</Link>
 						<a
 							href="https://www.instagram.com/espaciopapagayo/"
 							target="_blank"
